@@ -1,4 +1,4 @@
-# Interview Questions (Data Structures and Algorithms) 
+# Interview Questions (Algorithms) 
 
 # Check if Number is a Palindrome
 
@@ -14,5 +14,10 @@ if (temp == reverse):
 else:
     print ("Number is NOT a palindrome")
 
-# Check if String is a Palindrome
+#Check if String is a Palindrome
 
+string=input("Enter a string:")
+if (string==string[::-1]):
+    print ("This is a Palindrome!")
+else:
+    print ("This is not a Palindrome")
