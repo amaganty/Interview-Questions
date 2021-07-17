@@ -51,14 +51,29 @@ class linked_list:
             if cur_idx == index:
                 return cur_node.data
             cur_idx += 1
+    
+    #Erase
 
-
+    def erase(self,index):
+        if index >= self.length():
+            print ("Index error")
+            return
+        cur_idx = 0
+        cur_node = self.head
+        while True:
+            last_node = cur_node
+            cur_node = cur_node.next
+            if cur_idx==index:
+                last_node.next = cur_node.next
+                return 
+            cur_idx+=1
 
 
 my_list = linked_list()
 
 my_list.display()
 
+my_list.append(0)
 my_list.append(1)
 my_list.append(2)
 my_list.append(3)
@@ -67,6 +82,21 @@ my_list.append(4)
 my_list.display()
 
 print ("2nd index: %d" % my_list.get(2))
+
+my_list.erase(1)
+my_list.display()
+
+# my_list.erase(1)
+# my_list.display()
+
+# my_list.erase(1)
+# my_list.display()
+
+# my_list.erase(1)
+# my_list.display()
+
+# my_list.erase(0)
+# my_list.display()
 
 
     
