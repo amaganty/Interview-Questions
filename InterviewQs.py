@@ -40,3 +40,51 @@
 #         return a 
 # print(reverse(123))
 
+
+# ARRAY MANIPULATION AND SUM
+
+# Given an array arr[] of N integers and an integer S. 
+# The task is to find an element K in the array such that if all the elements from the array > K are made equal to K,
+#then the sum of all the elements of the resultant array becomes equal to S.
+# If it is not possible to find such an element then print -1 .
+
+# Examples: 
+# Input: M = 15, arr[] = {12, 3, 6, 7, 8} 
+# Output: 3 
+# Resultant array = {3, 3, 3, 3, 3} 
+# Sum of the array elements = 15 = S
+# Input: M = 5, arr[] = {1, 3, 2, 5, 8} 
+# Output: 1 
+
+
+# Python3 implementation of the approach
+ 
+# Function to return the required element
+def getElement(a, n, S) :
+     
+    # Sort the array
+    a.sort();
+ 
+    sum = 0;
+ 
+    for i in range(n) :
+         
+        # If current element
+        # satisfies the condition
+        if (sum + (a[i] * (n - i)) == S) :
+            return a[i];
+             
+        sum += a[i];
+ 
+    # No element found
+    return -1;
+ 
+# Driver Code
+if __name__ == "__main__" :
+     
+    S = 5;
+    a = [ 1, 3, 2, 5, 8 ];
+    n = len(a) ;
+ 
+    print(getElement(a, n, S)) ;
+
